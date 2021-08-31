@@ -1,0 +1,65 @@
+---
+layout:     post
+title:      "Welcome to BJC Blog"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2020-08-30 12:00:00
+author:     "Baijichuan"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - GO
+---
+
+Blog 就算开通了。
+
+之前也有想过自己搭一个网站。考虑到各种服务器域名的麻烦和时间成本，一直没有做。
+最近忽然想弄一个博客，把这两年积累的一些文档存起来。于是就搜索了一下 github.io 做博客的文档。
+其优点非常明显：
+
+* **Markdown** 带来的优雅写作体验
+* 非常熟悉的 Git workflow ，**Git Commit 即 Blog Post**
+* 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
+	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
+* Jekyll 的自定制非常容易，基本就是个模版引擎
+
+花半天时间弄了一下。
+
+
+<p id = "build"></p>
+
+接下来说说搭建这个博客的细节。  
+
+要完成自己的github.io博客网站，总共分三步：
+
+- 1 创建自己的github.io repo
+- 2 选择一款Jekyll的主题
+- 3 编写发布博客
+
+
+配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手。
+
+选择官方主题后，看起来略平淡，fork了一个现成的博客模板 huxblog-boilerplate。[文档](https://github.com/Huxpro/huxblog-boilerplate/blob/master/README.zh.md)
+
+需要注意修改 配置文件中的url 和 base_url。
+
+```
+	url: "http://baijichuan.github.io"              # your host, for absolute URL
+	baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
+
+```
+
+发现每次修改后都需要 push到 github 看效果，而且还有不能及时刷新的问题。
+找了一下本地预览的教程。
+
+```
+
+brew install gem
+
+gem install jekyll 
+
+cd  username.github.io # 进入自己的博客根目录
+
+jekyll serve -w
+
+```
+如果一切顺利，就可以在 127.0.0.1:4000看到本地博客了。
+
